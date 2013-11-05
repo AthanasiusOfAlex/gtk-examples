@@ -53,9 +53,15 @@ public:
         _tbtOpen = cast(ToggleToolButton)_builder.getObject("tbtOpen");
         _tbtOpen.addOnClicked(&_openOnClicked);
 
-        // The On Activate signal is used to capture choosing a menu item.
-        _mtmQuit = cast(MenuItem)_builder.getObject("mtmQuit");
-        _mtmQuit.addOnActivate(&_quitOnActivated); 
+        version(GNU)
+        {
+            // This causes a segmentation fault in gdc. No idea why...
+        }
+        else{
+            // The On Activate signal is used to capture choosing a menu item.
+            _mtmQuit = cast(MenuItem)_builder.getObject("mtmQuit");
+            _mtmQuit.addOnActivate(&_quitOnActivated);
+        }
 
         // We will now add a custom button that was not contemplated in the Glade file.
 
