@@ -118,7 +118,7 @@ protected:
     {
         static long times = 0;
         write("The 'star' button was hit ", ++times, " time");
-        if (times>1) {
+        if (times=1) {
             writeln("s.");
         } else {
             writeln(".");
