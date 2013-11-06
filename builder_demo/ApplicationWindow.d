@@ -117,7 +117,12 @@ protected:
     void _starOnClicked(Button button)
     {
         static long times = 0;
-        writeln("The 'star' button was hit ", ++times, " times.");
+        write("The 'star' button was hit ", ++times, " time");
+        if (times>1) {
+            writeln("s.");
+        } else {
+            writeln(".");
+        }
     }
     
     void _exitOnClicked(ToolButton button)
