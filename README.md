@@ -29,4 +29,4 @@ Compile with the following command:
 g++ -otransparent-slider main.cpp transparent-slider.cpp `pkg-config gtkmm-3.0 --cflags --libs` -std=c++11 -O3
 ```
 
-Leave out the `O3` if you want to do any debugging. (I hope it is not necessary!)
+Leave out the `O3` if you want to do any debugging. (I hope it is not necessary!) Note the `-std=c++11` flag is necessary. If you don't want to use C++11, you will need to convert the `auto` keywords to the appropriate types first.
